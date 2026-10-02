@@ -1,0 +1,8 @@
+{
+  "name": "Student Record Lookup",
+  "description": "Fast university student record lookup using Binary Search with comparison metrics against Linear Search, step-by-step visual trace, and hackathon dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
