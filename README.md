@@ -1,79 +1,125 @@
-# Student Record Lookup — University Search System
+# Student Record Lookup Using Binary Search
 
-A high-performance student record lookup and algorithm benchmarking web application built for university scale and college hackathons. Demonstrates how **Binary Search ($O(\log_2 N)$)** outperforms **Linear Search ($O(N)$)** when searching sorted student roll numbers.
+A web-based **Student Record Lookup System** that uses **Binary Search** to efficiently find student records using their roll numbers. The project also compares Binary Search with **Linear Search** based on the number of comparisons.
 
----
+## Live Demo
 
-## 🌟 Key Features
 
-- **Binary Search ($O(\log_2 N)$)**: Searches sorted student records using iterative divide-and-conquer, tracking exact comparisons.
-- **Linear Search ($O(N)$)**: Runs simultaneous sequential search to provide a live baseline comparison.
-- **Side-by-Side Comparison Scoreboard**: Displays comparisons made by both algorithms, efficiency multiplier (e.g. 14.5× faster), and saved operations.
-- **Interactive Step-by-Step Visualizer**: Visual array strip with `Low (L)`, `Mid (M)`, and `High (H)` pointer tags, eliminated interval dimming, and playback controls (Play, Pause, Step Next/Prev, Speed).
-- **Student Details Display**: Full academic profiles including marks, percentage progress bar, letter grade, attendance, semester, and official university email.
-- **Student Not Found Handling**: Clear explanation when a roll number does not exist, explaining the `low > high` termination condition and showing the nearest existing records.
-- **Hackathon Demo Presets**: Instant 1-click test cases for **Best Case** (middle element, 1 step), **Worst Case** (last element), **First Element**, **Random Student**, and **Not Found Test** (`99999`).
-- **Scalability Dataset Switcher**: Test across **24 Records**, **100 Campus Records**, and **1,000 University Records** to show real-world logarithmic scaling.
-- **Student Directory Table**: Searchable and filterable by engineering branch with click-to-lookup functionality.
-- **Add Student Modal**: Add new student records with roll-number uniqueness verification and automatic sorted insertion.
-- **Algorithm Code Reference**: Clean implementations in JavaScript, Python, and C++ with complexity analysis.
+[Open Student Record Lookup](https://student-record-lookup.ai.studio/)
 
----
 
-## 🚀 Quick Start & Local Setup
+## Problem Statement
 
-### Prerequisites
-- Node.js (v18 or higher recommended)
-- npm or pnpm or bun
+A university may have thousands of student records identified by unique roll numbers. Searching for a particular student using Linear Search can require many comparisons.
 
-### Installation
+This project uses **Binary Search** to make student record lookup more efficient when the records are sorted by roll number.
 
-1. Clone or extract the project files:
-```bash
-git clone https://github.com/nagabhavana25-create/student-record-lookup.git
-cd student-record-lookup
+## Key Features
+
+* Search student records using roll number
+* Binary Search implementation
+* Linear Search for performance comparison
+* Student Found / Student Not Found result
+* Display detailed student information
+* Count comparisons for both algorithms
+* Step-by-step Binary Search visualization
+* Student Directory with complete student records
+* Add new student records
+* Filter students by name, roll number and branch
+* View student marks, grades, semester, attendance and branch
+* Support for different branches
+* Compare Binary Search and Linear Search
+* Demo search cases
+* Test with different dataset sizes such as 24, 100 and 1000 student records
+* View Binary Search and Linear Search algorithm code
+
+## How It Works
+
+1. Student records are arranged in sorted order by roll number.
+2. The user enters a roll number to search.
+3. Binary Search checks the middle record.
+4. If the target is smaller, it searches the left half.
+5. If the target is larger, it searches the right half.
+6. The process continues until the student is found or the search range becomes empty.
+7. The system displays the student details and comparison count.
+8. Linear Search is also performed to compare the number of comparisons.
+
+## Complexity Analysis
+
+| Algorithm     | Best Case | Average Case | Worst Case | Space |
+| ------------- | --------- | ------------ | ---------- | ----- |
+| Binary Search | O(1)      | O(log n)     | O(log n)   | O(1)  |
+| Linear Search | O(1)      | O(n)         | O(n)       | O(1)  |
+
+**Binary Search uses the Divide and Conquer paradigm.**
+
+## Technology Used
+
+* React
+* TypeScript
+* Vite
+* HTML
+* CSS
+* GitHub
+
+## Project Structure
+
+```text
+student-record-lookup/
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── README.md
+└── src/
+    ├── components/
+    ├── data/
+    ├── types/
+    ├── utils/
+    ├── App.tsx
+    ├── index.css
+    └── main.tsx
 ```
 
-2. Install dependencies:
-```bash
-npm install
-```
+## Project Modules
 
-3. Run the development server:
-```bash
-npm run dev
-```
+### Search
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+Allows the user to search for a student using the roll number and displays whether the student is found or not found.
 
-5. To create a production build:
-```bash
-npm run build
-```
+### Comparison
 
----
+Compares **Binary Search** and **Linear Search** by displaying the number of comparisons required by each algorithm.
 
-## 📊 Time & Space Complexity
+### Student Directory
 
-| Algorithm | Best Case | Average Case | Worst Case (Not Found) | Space Complexity | Prerequisite |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Binary Search** | $O(1)$ | $O(\log_2 N)$ | $O(\log_2 N)$ | $O(1)$ | Array must be strictly sorted by Roll No |
-| **Linear Search** | $O(1)$ | $O(N/2)$ | $O(N)$ | $O(1)$ | Works on unsorted data |
+Displays complete student records including roll number, student name, branch, marks, grade, semester and attendance. Students can be filtered using available search and branch filters.
 
-For a university of **1,000 students**, Binary Search finds any student in at most **10 comparisons**, while Linear Search can take up to **1,000 comparisons**.
+### Algorithm Code
 
----
+Displays the implemented Binary Search and Linear Search code for reference.
 
-## 🛠️ Tech Stack
+### Dataset
 
-- **Framework**: React 19 + TypeScript
-- **Styling**: Tailwind CSS v4
-- **Icons**: Lucide React
-- **Animations**: Motion
-- **Bundler**: Vite
+The application supports different dataset sizes, including **24, 100 and 1000 student records**, to demonstrate how the algorithms perform as the number of records increases.
 
----
+### Demo
 
-## 📝 License
+Provides different predefined search cases to demonstrate the working of Binary Search and comparison with Linear Search.
+
+### Add Student
+
+Allows new student records to be added to the student directory.
+
+## Project Purpose
+
+This project demonstrates how **Binary Search** can reduce the number of comparisons required to search sorted student records compared with **Linear Search**. It also provides an interactive interface to visualize the search process and explore student records.
+
+## Future Scope
+
+* Connect the application to a database for storing larger amounts of student data.
+* Add login and authentication features.
+* Add more advanced filtering and search options.
+* Support larger datasets and real-time student record management.
 
 Distributed under the Apache-2.0 License.
