@@ -121,5 +121,3 @@ This project demonstrates how **Binary Search** can reduce the number of compari
 * Add login and authentication features.
 * Add more advanced filtering and search options.
 * Support larger datasets and real-time student record management.
-
-Distributed under the Apache-2.0 License.
